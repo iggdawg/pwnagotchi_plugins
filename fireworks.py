@@ -24,7 +24,7 @@ class Fireworks(plugins.Plugin):
         ledshim.clear()
         ledshim.show()
 
-    # called when we're waiting
+    # Bring in the cylon when we're waiting
     def on_wait(self, agent, t):
         FALLOFF = 1.9
         SCAN_SPEED = 4
@@ -61,6 +61,7 @@ class Fireworks(plugins.Plugin):
         ledshim.clear()
         ledshim.show()
 
+    # Sparkle teal when we associate
     def on_association(self, agent, access_point):
 
         ledshim.set_clear_on_exit()
@@ -83,6 +84,7 @@ class Fireworks(plugins.Plugin):
         ledshim.clear()
         ledshim.show()
 
+    # Sparkle red when we deauth
     def on_deauthentication(self, agent, access_point, client_station):
 
         ledshim.set_clear_on_exit()
@@ -105,22 +107,25 @@ class Fireworks(plugins.Plugin):
         ledshim.clear()
         ledshim.show()
 
+    #Taste the rainbow when we get a handshake
     def on_handshake(self, agent, filename, access_point, client_station):
 
         ledshim.set_clear_on_exit()
         ledshim.clear()
         ledshim.show()
 
-        num = 10
+        num = 20
 
         while num >=0 :
             pixels = random.sample(range(ledshim.NUM_PIXELS), random.randint(1, 5))
             for i in range(ledshim.NUM_PIXELS):
                 if i in pixels:
                     ledshim.set_pixel(i, random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+                else:
+                    ledshim.set_pixel(i, 0, 0, 0)
             ledshim.show()
             num -= 1
-            time.sleep(0.02)
+            time.sleep(0.001)
 
         ledshim.clear()
         ledshim.show()
