@@ -70,8 +70,9 @@ class Fireworks(plugins.Plugin):
 
         num = 5
 
-        while num >=0 :
-            pixels = random.sample(range(ledshim.NUM_PIXELS), random.randint(1, 5))
+        while num >= 0:
+            pixels = random.sample(range(ledshim.NUM_PIXELS),
+                                   random.randint(1, 5))
             for i in range(ledshim.NUM_PIXELS):
                 if i in pixels:
                     ledshim.set_pixel(i, 0, 255, 255)
@@ -93,8 +94,9 @@ class Fireworks(plugins.Plugin):
 
         num = 5
 
-        while num >=0 :
-            pixels = random.sample(range(ledshim.NUM_PIXELS), random.randint(1, 5))
+        while num >= 0:
+            pixels = random.sample(range(ledshim.NUM_PIXELS),
+                                   random.randint(1, 5))
             for i in range(ledshim.NUM_PIXELS):
                 if i in pixels:
                     ledshim.set_pixel(i, 255, 0, 0)
@@ -116,11 +118,14 @@ class Fireworks(plugins.Plugin):
 
         num = 20
 
-        while num >=0 :
-            pixels = random.sample(range(ledshim.NUM_PIXELS), random.randint(1, 5))
+        while num >= 0:
+            pixels = random.sample(range(ledshim.NUM_PIXELS),
+                                   random.randint(1, 5))
             for i in range(ledshim.NUM_PIXELS):
                 if i in pixels:
-                    ledshim.set_pixel(i, random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+                    ledshim.set_pixel(i, random.randint(0, 255),
+                                      random.randint(0, 255),
+                                      random.randint(0, 255))
                 else:
                     ledshim.set_pixel(i, 0, 0, 0)
             ledshim.show()
