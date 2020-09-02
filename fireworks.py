@@ -29,8 +29,8 @@ class Fireworks(plugins.Plugin):
         FALLOFF = 1.9
         SCAN_SPEED = 4
 
-        #ledshim.set_brightness(0.4)
-        
+        # ledshim.set_brightness(0.4)
+
         ledshim.set_clear_on_exit()
         ledshim.clear()
         ledshim.show()
@@ -107,7 +107,7 @@ class Fireworks(plugins.Plugin):
         ledshim.clear()
         ledshim.show()
 
-    #Taste the rainbow when we get a handshake
+    # Taste the rainbow when we get a handshake
     def on_handshake(self, agent, filename, access_point, client_station):
 
         ledshim.set_clear_on_exit()
